@@ -3,9 +3,9 @@
 
 JAVASRC = Exponentials.java
 SOURCES = README Makefile $(JAVASRC)
-MAINCLASS = FileReverse
-CLASSES = FileReverse.class
-JARFILE = FileReverse
+MAINCLASS = Exponentials
+CLASSES = Exponentials.class
+JARFILE = Exponentials
 
 all: $(JARFILE)
 
