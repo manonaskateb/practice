@@ -9,10 +9,12 @@ class Exponentials{
         int base = Integer.parseInt(baseNumber);
         int result = Integer.parseInt(resultNumber);
         int output_factor;
-
-        output_factor = solveForExp(base, result);
-
-        JOptionPane.showMessageDialog(null, "the exponent is: " + output_factor , "output_factor", JOptionPane.PLAIN_MESSAGE );
+        if(base == 1){
+            JOptionPane.showMessageDialog(null, "the exponent can be anything.", "output_factor", JOptionPane.PLAIN_MESSAGE );
+        } else {
+            output_factor = solveForExp(base, result);
+            JOptionPane.showMessageDialog(null, "the exponent is: " + output_factor , "output_factor", JOptionPane.PLAIN_MESSAGE );
+        }
         return;
     }
     
