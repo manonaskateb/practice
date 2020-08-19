@@ -6,11 +6,6 @@ EXEBIN		= Exponentials
 SOURCES		= $(ADT).c $(EXEBIN).c List.c 
 OBJECTS		= $(ADT).o $(EXEBIN).o List.o
 HEADERS		= $(ADT).h List.h
-FILES		= $(SOURCES) $(HEADERS) $(ADT)Test.c README Makefile
-CLASS		= cse101-pt.f19
-ASSIGNMENT	= pa5
-SUBMIT		= submit $(CLASS) $(ASSIGNMENT) $(FILES)
-CHECK 		= ls /afs/cats.ucsc.edu/class/$(CLASS)/$(ASSIGNMENT)/malefebv
 
 
 all: $(EXEBIN)
@@ -26,9 +21,4 @@ clean :
 	
 memcheck:
 	valgrind --leak-check=full ./$(EXEBIN) 
-	
-check:
-	$(CHECK)
 
-submit:
-	$(SUBMIT)
