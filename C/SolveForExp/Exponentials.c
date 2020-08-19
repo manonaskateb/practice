@@ -1,20 +1,22 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <math.h>
+#include <tgmath.h>
 
-class Exponentials{
-
-    
-    int base;
-    printf("Enter the base number:");
+int main() {
+    double base;
+    printf("Enter the base number:\n");
     scanf("%d", &base);
 
-    int result;
-    printf("Enter the result number:");
+    double result;
+    printf("Enter the result number:\n");
     scanf("%d", &result);
 
-    int exponent = (int)(log(result)/log(base));
-    printf(base + " to the power of " + exponent + " is " + result + ".");
+    double r_log = log(result);
+    double b_log = log(base);
+
+    double exponent = 0;
+    exponent = r_log/b_log;
+    printf("%d to the power of %d is %d.", base, exponent, result);
 
     return 0;
 }

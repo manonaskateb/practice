@@ -1,11 +1,11 @@
 # Manon Lefebvre
 # 18 August 2020
 
-ADT			= Exponentials
+# ADT			= Exponentials
 EXEBIN		= Exponentials
-SOURCES		= $(ADT).c $(EXEBIN).c List.c 
-OBJECTS		= $(ADT).o $(EXEBIN).o List.o
-HEADERS		= $(ADT).h List.h
+SOURCES		= $(EXEBIN).c # $(ADT).c
+OBJECTS		=  $(EXEBIN).o # $(ADT).o
+HEADERS		= #
 
 
 all: $(EXEBIN)
@@ -15,6 +15,8 @@ $(EXEBIN) : $(OBJECTS) $(HEADERS)
 
 $(OBJECTS) : $(SOURCES) $(HEADERS)
 	gcc -g -c $(FLAGS) $(SOURCES)
+
+run : 
 
 clean :
 	rm -f $(EXEBIN) $(OBJECTS) 
