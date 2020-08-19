@@ -1,7 +1,7 @@
 # Manon Lefebvre
 # 18 August 2020
 
-ADT			= Calculations
+ADT			= Exponentials
 EXEBIN		= Exponentials
 SOURCES		= $(ADT).c $(EXEBIN).c List.c 
 OBJECTS		= $(ADT).o $(EXEBIN).o List.o

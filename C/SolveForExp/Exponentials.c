@@ -1,6 +1,10 @@
-#include <std.io>
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
 
-int main(){
+class Exponentials{
+
+    
     int base;
     printf("Enter the base number:");
     scanf("%d", &base);
