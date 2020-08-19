@@ -5,13 +5,14 @@ JAVASRC = Exponentials.java
 SOURCES = README Makefile $(JAVASRC)
 MAINCLASS = Exponentials
 CLASSES = Exponentials.class
-JARFILE = Exponentials
+JARFILE = Exponentials.jar
 
 all: $(JARFILE)
 
 $(JARFILE): $(CLASSES)
 	echo Main-class: $(MAINCLASS) > Manifest
 	jar cvfm $(JARFILE) Manifest $(CLASSES)
+	#jar cf $(MAINCLASS).jar $(MAINCLASS).class
 	rm Manifest
 	chmod +x $(JARFILE)
 
