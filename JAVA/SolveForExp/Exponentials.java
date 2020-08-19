@@ -1,25 +1,24 @@
 import java.util.*;
 import java.io.*;
-import java.math.log;
+import java.math.*;
 
 class Exponentials{
-    public static void main(String[] args) throws Exception {
-        int input_int = 2;
-        int input_mult = 8;
+    public static void main(String[] args){
+        int input_int = Integer.parseInt(args[0]);
+        int input_mult =  Integer.parseInt(args[1]);
         int output_factor;
 
         output_factor = solveForExp(input_int, input_mult);
 
-        System.out.print(input_int + " to the power of " + output_factor + " is equal to" + input_mult + ".\n");
+        System.out.print(input_int + " to the power of " + output_factor + " is equal to " + input_mult + ".\n");
         return;
     }
     
     public static int solveForExp(int n, int m){
         int factor;
-        if (m==1) {factor = 0;}
+        if (m==1) {return 0;}
         else {
-            factor = (int)(Math.log(n)/Math.log(m));
+            return (int)(Math.log(m)/Math.log(n));
         }
-        return factor;
     }
 }
