@@ -2,8 +2,13 @@
 #include <stdio.h>
 #include <math.h>
 
-double findExp(int b, int r){
-    return log(r)/log(b);
+double findExp(double b, double r){
+    if(r<1){
+        double rpos = 1/r;
+        return log(r)/log(b);
+    }else{
+        return log(r)/log(b);
+    }
 }
 
 int main() {
@@ -11,14 +16,19 @@ int main() {
 
     printf("Enter the base number:");
     double base;
-    scanf("%d", &base); 
+    scanf("%lf", &base); 
 
     printf("Enter the result number:");
     double result;
-    scanf("%d", &result);
+    scanf("%lf", &result);
 
     double exponent = findExp(base, result);
-    printf("%d to the power of %d is %d.\n", base, exponent, result);
+
+    if(result<base){
+        printf("%lf to the power of -%lf is %lf\n", base, exponent, result);
+    }else{
+        printf("%lf to the power of %lf is %lf\n", base, exponent, result);
+    }
 
     return 0;
 }
