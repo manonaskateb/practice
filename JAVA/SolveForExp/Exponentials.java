@@ -1,4 +1,4 @@
-
+import java.math.*;
 import javax.swing.JOptionPane;
 
 class Exponentials{
@@ -6,10 +6,12 @@ class Exponentials{
         String baseNumber = JOptionPane.showInputDialog("baseNumber");
         String resultNumber =  JOptionPane.showInputDialog("resultNumber");
 
-        int base = Integer.parseInt(baseNumber);
-        int result = Integer.parseInt(resultNumber);
-        int output_factor;
-        if(base == 1){
+        double base = Integer.parseInt(baseNumber);
+        double result = Integer.parseInt(resultNumber);
+        double output_factor;
+        if((result>1 && base>result) || (base==1 && result!=1)){
+            JOptionPane.showMessageDialog(null, "Could not find exponent: Invalid base and result numbers.", "output_factor", JOptionPane.PLAIN_MESSAGE );
+        }else if(base==1 && result==1){
             JOptionPane.showMessageDialog(null, "the exponent can be anything.", "output_factor", JOptionPane.PLAIN_MESSAGE );
         } else {
             output_factor = solveForExp(base, result);
@@ -18,10 +20,7 @@ class Exponentials{
         return;
     }
     
-    public static int solveForExp(int n, int m){
-        if (m==1) {return 0;}
-        else {
-            return (int)(Math.log(m)/Math.log(n));
-        }
+    public static double solveForExp(double b, double r){
+        return Math.log(r)/Math.log(b);
     }
 }

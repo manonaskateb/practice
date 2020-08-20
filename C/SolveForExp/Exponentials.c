@@ -3,12 +3,7 @@
 #include <math.h>
 
 double findExp(double b, double r){
-    if(r<1){
-        double rpos = 1/r;
-        return log(r)/log(b);
-    }else{
-        return log(r)/log(b);
-    }
+    return log(r)/log(b);
 }
 
 int main() {
@@ -23,9 +18,10 @@ int main() {
     scanf("%lf", &result);
 
     double exponent = findExp(base, result);
-
-    if(result<base){
-        printf("%lf to the power of -%lf is %lf\n", base, exponent, result);
+    if((result>1 && base>result) || (base==1 && result!=1)){
+        printf("Could not find exponent: Invalid base and result numbers.");
+    }else if(base==1 && result==1){
+        printf("The exponent cound be anything.\n");
     }else{
         printf("%lf to the power of %lf is %lf\n", base, exponent, result);
     }
