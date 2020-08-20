@@ -1,4 +1,4 @@
-import java.math.*;
+//import java.math.*;
 import javax.swing.JOptionPane;
 
 class Exponentials{
